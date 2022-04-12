@@ -1,0 +1,21 @@
+.app-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: pink;
+    height: 56px;
+}
+
+.app-header__info {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    margin: 0 0 0 0.5em;
+}
+
+.app-header__author {
+    margin: 0 1em 0 0;
+}

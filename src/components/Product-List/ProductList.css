@@ -1,0 +1,4 @@
+.product-list-view {
+    display: flex;
+    justify-content: space-between;
+}

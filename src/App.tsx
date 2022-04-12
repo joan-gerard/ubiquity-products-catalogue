@@ -1,11 +1,17 @@
-import React from 'react';
+import React from 'react'
 import './App.css';
+import Header from './components/Header/Header';
+import SearchBar from './components/SearchBar/SearchBar';
+import Products from './components/Products/Products';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">App
+    <div className="app">
+      <Header />
+      <SearchBar />
+      <Products />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

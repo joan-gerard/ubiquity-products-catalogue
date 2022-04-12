@@ -1,0 +1,35 @@
+.nav-bar {
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+    align-items: center;
+}
+
+.search-bar {
+    margin: 0 0 0 1em;
+    display: flex;
+    align-items: center;
+    background-color: #F6F6F8;
+}
+
+.search-bar__input {
+    background: url('../../assets/search-icon.svg') left no-repeat;
+    padding-left: 1.5em;
+    border: none;
+    font-family: 'Lato', sans-serif;
+}
+
+::placeholder {
+    color: #838691;
+}
+
+.search-bar__clear {
+    border: none;
+    color: inherit;
+    background: none;
+}
+
+.filters {
+    margin: 0 1em 0 0;
+}

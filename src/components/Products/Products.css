@@ -1,0 +1,9 @@
+.products-container {
+    background-color: antiquewhite;
+    margin: 1em;
+}
+
+.products-container__headers {
+    display: flex;
+    justify-content: space-between;
+}
