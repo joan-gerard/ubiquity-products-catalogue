@@ -1,28 +1,30 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './Products.css';
 import ProductList from '../Product-List/ProductList';
-import { ProductsInterface } from '../../interface/interface';
-
-const imgUrl = 'https://static.ui.com/fingerprint/ui/icons/06a25b40-ef1f-463a-82d9-13236866ea3d_25x25.png'
+import { ProductType } from '../../interface/interface';
 
 const Products = () => {
-    const products: ProductsInterface[] = [
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 6 In-wall" },
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 6 In-wall" },
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 6 In-wall" },
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 6 In-wall" },
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 6 In-wall" },
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 7 In-wall" },
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 6 In-wall" },
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 6 In-wall" },
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 6 In-wall" },
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 6 In-wall" },
-        { img: imgUrl, line: "UniFi LTE", name: "Access Point WiFi 6 In-wall" }
-    ]
+    const [products, setProducts] = useState<ProductType[]>([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetch('https://static.ui.com/fingerprint/ui/public.json')
+            const json = await data.json();
+            setProducts(json.devices)
+        }
+        fetchData();
+    }, [])
+
+    console.log('PRODUCTS', products[0])
+    console.log('TOTAL DEVICES', products.length)
+    console.log('ID', products[0].icon.id)
+    console.log('PRODUCT LINE', products[0].line.name)
+    console.log('NAME', products[0].product.name)
+
     return (
         <main className="products-container">
             <div className="products-container__headers">
-                <p>123 Devices</p>
+                <p>{products.length}</p>
                 <p>PRODUCT LINE</p>
                 <p>Name</p>
             </div>

@@ -1,17 +1,28 @@
 import React from 'react'
 import './ProductList.css';
-import { ProductsInterface } from '../../interface/interface';
+import { ProductType } from '../../interface/interface';
 
 type ProductListProps = {
-  product: ProductsInterface;
+  product: ProductType;
 }
 
 const ProductList: React.FC<ProductListProps> = (props) => {
+  const imageURL = `https://static.ui.com/fingerprint/ui/icons/${props.product.icon.id}_25x25.png`
+
+  const getProductLine = (name: any) => {
+    if (name === 'Unknown') {
+      return 'Other'
+    }
+    return name;
+  }
+
+  const ProductLine = getProductLine(props.product.line.name);
+
   return (
       <li className="product-list-view">
-        <img src={props.product.img} />
-        <div>{props.product.line}</div>
-        <div>{props.product.name}</div>
+        <img src={imageURL} />
+        <div>{ProductLine}</div>
+          <div>{props.product.product.name}</div>
       </li>
   )
 }
