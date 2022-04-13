@@ -1,6 +1,7 @@
 .products-container--list {
     background-color: antiquewhite;
-    margin: 1em;
+    margin: 1em auto;
+    width: 1262px;
 }
 
 .products-container--grid {
@@ -12,4 +13,5 @@
 .products-container__headers {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1em;
 }

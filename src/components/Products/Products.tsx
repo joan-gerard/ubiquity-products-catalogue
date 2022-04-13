@@ -4,9 +4,13 @@ import ProductList from '../Product-List/ProductList';
 import ProductGrid from '../Product-Grid/ProductGrid';
 import { ProductType } from '../../interface/interface';
 
-const Products = () => {
+type ProductsProps = {
+    isGrid: boolean;
+}
+
+
+const Products: React.FC<ProductsProps> = (props) => {
     const [products, setProducts] = useState<ProductType[]>([])
-    const [isGrid, setIsGrid] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,9 +29,9 @@ const Products = () => {
 
     return (
         <>
-            {isGrid ? (
+            {props.isGrid ? (
                 <main>
-                <p>{products.length}</p>
+                    <p>{products.length}</p>
                     <ul className="products-container--grid">
                         {products.map((product, index) => (
                             <ProductGrid key={index} product={product} />

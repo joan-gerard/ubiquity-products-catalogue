@@ -30,6 +30,16 @@
     background: none;
 }
 
-.filters {
-    margin: 0 1em 0 0;
+.views-filters {
+    margin: 0 1.5em 0 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.views-filters > * {
+    margin-left: 0.5em;
+}
+
+*:focus {
+    outline: none;
 }
