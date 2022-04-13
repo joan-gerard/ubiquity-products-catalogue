@@ -1,0 +1,24 @@
+.product-grid-view {
+    display: flex;
+    flex-flow: wrap;
+    background-color: white;
+    width: 233px;
+    height: 193px;
+    margin-top: 1em;
+    margin-left: 1em;
+    border-radius: 8px;
+    border: solid #DBDCE1 1px;
+}
+
+article {
+    width: 100%;
+}
+
+.icon-container {
+    display: flex;
+    background-color: #F6F6F8;
+    justify-content: space-around;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 124px;
+}

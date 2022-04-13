@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProductList.css';
 import { ProductType } from '../../interface/interface';
 
@@ -8,6 +8,7 @@ type ProductListProps = {
 
 const ProductList: React.FC<ProductListProps> = (props) => {
   const imageURL = `https://static.ui.com/fingerprint/ui/icons/${props.product.icon.id}_25x25.png`
+
 
   const getProductLine = (name: any) => {
     if (name === 'Unknown') {
@@ -22,7 +23,7 @@ const ProductList: React.FC<ProductListProps> = (props) => {
       <li className="product-list-view">
         <img src={imageURL} />
         <div>{ProductLine}</div>
-          <div>{props.product.product.name}</div>
+        <div>{props.product.product.name}</div>
       </li>
   )
 }
