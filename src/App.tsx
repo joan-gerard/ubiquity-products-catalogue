@@ -14,6 +14,11 @@ const App = () => {
   const [isGrid, setIsGrid] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
   const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(null)
+  const [isFiltered, setisFiltered] = useState(false)
+  const [productLine, setProductLine] = useState('')
+
+  console.log('isFiltered: ', isFiltered)
+  console.log('productLine: ', productLine)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,17 +38,33 @@ const App = () => {
 
 
   return (
-      <div className="app">
-        <Header />
-        <UtilityBar switchToGrid={switchToGrid} switchToView={switchToView} />
-        <Routes>
-          <Route path="/" element={isGrid
-            ? <ProductGridView products={products} setSelectedProduct={setSelectedProduct} />
-            : <ProductListView products={products} setSelectedProduct={setSelectedProduct} />
-          } />
-          <Route path="/devices/:id" element={<ProductDetailsPage products={products} selectedProduct={selectedProduct} />} />
-        </Routes>
-      </div>
+    <div className="app">
+      <Header />
+      <UtilityBar
+        switchToGrid={switchToGrid}
+        switchToView={switchToView}
+        products={products}
+        setisFiltered={setisFiltered}
+        setProductLine={setProductLine}
+      />
+      <Routes>
+        <Route path="/" element={isGrid
+          ? <ProductGridView
+            products={products}
+            setSelectedProduct={setSelectedProduct}
+            isFiltered={isFiltered}
+            productLine={productLine}
+          />
+          : <ProductListView
+            products={products}
+            setSelectedProduct={setSelectedProduct}
+            isFiltered={isFiltered}
+            productLine={productLine}
+          />
+        } />
+        <Route path="/devices/:id" element={<ProductDetailsPage products={products} selectedProduct={selectedProduct} />} />
+      </Routes>
+    </div>
   )
 }
 

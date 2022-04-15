@@ -1,0 +1,33 @@
+.filter-container {
+    position: absolute;
+    z-index: 1;
+    top: 4em;
+    right: 1em;
+    background-color: white;
+    width: 220px;
+    padding: 1em;
+
+}
+
+.filter-container__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+.close-filter-button {
+    margin: 0.10em 0.25em;
+    padding: 0.10em 0.25em;
+}
+
+.categorie {
+    margin-bottom: 0.3em;
+    font-weight: bold;
+}
+
+.categorie:hover {
+    color: #006FFF;
+    font-weight: bold;
+    /* font-size: 18px; */
+}
