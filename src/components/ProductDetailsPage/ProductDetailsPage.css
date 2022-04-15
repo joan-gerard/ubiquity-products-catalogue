@@ -1,0 +1,31 @@
+.product-article {
+    display: flex;
+    justify-content: center;
+    margin-top: 10em;
+    align-items: center;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-article__info {
+    margin-left: 2em;
+    width: 300px;
+    font-weight: bold;
+}
+
+.product-article__info > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #EDEDF0;
+}
+
+.product-article__info-title {
+    margin-bottom: 0.25em;
+}
+
+.back-button {
+    margin-left: 1em;
+    margin-top: 1em;
+}

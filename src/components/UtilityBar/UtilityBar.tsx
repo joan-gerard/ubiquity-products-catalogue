@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import './SearchBar.css';
+import './UtilityBar.css';
 import clear from '../../assets/close-icon.svg';
 import defaultGrid from '../../assets/default-grid.svg';
 import defaultList from '../../assets/default-list.svg';
@@ -25,7 +25,11 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
   return (
     <nav className="nav-bar">
       <form className="search-bar">
-        <input className="search-bar__input" type="search" placeholder="Search" ref={searchInputRef} />
+        <input
+          className="search-bar__input"
+          type="search"
+          placeholder="Search"
+          ref={searchInputRef} />
         <button onClick={(e) => clearSearchInput(e)} className="search-bar__clear"><img src={clear} alt="clear search" /></button>
       </form>
       <div className="views-filters">

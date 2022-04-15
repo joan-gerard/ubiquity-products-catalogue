@@ -1,6 +1,12 @@
 .product-list-view {
     display: flex;
     justify-content: space-between;
+    background-color: aquamarine;
+    margin-top: 0.25em;
+}
+
+.product-list-view:hover {
+    background-color: aqua;
 }
 
 .product-grid-view {

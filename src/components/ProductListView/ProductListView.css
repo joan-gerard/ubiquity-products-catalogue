@@ -4,12 +4,6 @@
     width: 1262px;
 }
 
-.products-container--grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
 .products-container__headers {
     display: flex;
     justify-content: space-between;
