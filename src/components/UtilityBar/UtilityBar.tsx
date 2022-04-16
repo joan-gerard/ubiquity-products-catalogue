@@ -43,9 +43,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   const getSearchInput = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const SearchInput = searchInputRef?.current?.value;
-    const SearchResult = products.filter((product) => SearchInput?.toLocaleLowerCase() === product.product.name.toLocaleLowerCase())
-    setSearchResult(SearchResult);
+    const searchInput = searchInputRef?.current?.value;
+    const regex = new RegExp(searchInput || '')
+    console.log(regex)
+    const searchResult = products.filter((product) => product.product.name.toLowerCase().match(regex))
+    setSearchResult(searchResult);
   }
 
   return (

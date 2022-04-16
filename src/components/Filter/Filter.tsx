@@ -38,6 +38,7 @@ const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered,
           //   key={index}
           //   className="categorie">{categorie}</p>
           <div
+            key={index}
             onClick={() => {
               setisFiltered(true);
               setProductLine(categorie)
@@ -46,9 +47,8 @@ const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered,
           >
             <input
               type="radio"
-              key={index}
               id={categorie}
-              checked={productLine === categorie}
+              defaultChecked={productLine === categorie}
             />
             <label
               htmlFor={categorie}
