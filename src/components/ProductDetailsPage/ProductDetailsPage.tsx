@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { ProductType } from '../../interface/interface'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import './ProductDetailsPage.css'
 import back from '../../assets/back-icon.svg'
 
@@ -25,12 +25,24 @@ const ProductDetailsPage: React.FC<Props> = ({ selectedProduct, products }) => {
         [selectedProduct, products, productID]
     )
 
+    const navigate = useNavigate();
+
+    const goBack = () => {
+        navigate(`/`);
+    }
+
+
     const imageURL = `https://static.ui.com/fingerprint/ui/icons/${chosenProduct?.icon.id}_257x257.png`
 
     return (
         <>
             <div>
-                <img src={back} alt="back button" className="back-button" />
+                <img
+                    src={back}
+                    alt="back button"
+                    className="back-button"
+                    onClick={goBack}
+                />
             </div>
             <article className="product-article">
                 <div className="product-article__image">

@@ -12,6 +12,7 @@ type SearchBarProps = {
   products: ProductType[];
   setisFiltered: any;
   setProductLine: any;
+  productLine: any;
 }
 
 
@@ -20,6 +21,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   switchToView,
   products,
   setProductLine,
+  productLine,
   setisFiltered }) => {
   const [isShowingFilters, setIsShowingFilters] = useState(false)
 
@@ -59,6 +61,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
               products={products}
               setisFiltered={setisFiltered}
               setProductLine={setProductLine}
+              productLine={productLine}
             />
           ) : null}
         </div>

@@ -46,6 +46,7 @@ const App = () => {
         products={products}
         setisFiltered={setisFiltered}
         setProductLine={setProductLine}
+        productLine={productLine}
       />
       <Routes>
         <Route path="/" element={isGrid

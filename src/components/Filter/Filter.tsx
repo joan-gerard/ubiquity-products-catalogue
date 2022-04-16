@@ -6,16 +6,17 @@ type Props = {
   setIsShowingFilters: (a: boolean) => void;
   products: ProductType[];
   setisFiltered: any;
-  setProductLine: any
+  setProductLine: any;
+  productLine: any;
 }
 
-const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered, setProductLine }) => {
+const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered, productLine, setProductLine }) => {
 
   const closeFilter = () => {
     setIsShowingFilters(false)
   }
 
-  let categories = products.map(a => a.line.name)
+  const categories = products.map(a => a.line.name)
   const uniqueCategories = Array.from(new Set(categories))
 
   console.log('ON FILTER', uniqueCategories)
@@ -29,17 +30,34 @@ const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered,
       <div>
         Product Line
       </div>
-      <div className="filter-container__categories">
+      <form className="filter-container__categories">
         {uniqueCategories.map((categorie, index) => (
-          <p
+          // <p
+          //   onClick={() => {
+          //     setisFiltered(true);
+          //     setProductLine(categorie)
+          //   }}
+          //   key={index}
+          //   className="categorie">{categorie}</p>
+          <div
             onClick={() => {
               setisFiltered(true);
               setProductLine(categorie)
             }}
-            key={index}
-            className="categorie">{categorie}</p>
+          >
+            <input
+              type="radio"
+              key={index}
+              id={categorie}
+              checked={productLine === categorie}
+            />
+            <label
+              htmlFor={categorie}
+              className="categorie"
+            >{categorie}</label>
+          </div>
         ))}
-      </div>
+      </form>
     </div>
   )
 }
