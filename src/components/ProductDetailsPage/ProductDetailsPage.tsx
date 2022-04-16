@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { ProductType } from '../../interface/interface'
 import { useParams } from 'react-router-dom'
 import './ProductDetailsPage.css'
@@ -9,23 +9,23 @@ type Props = {
     selectedProduct: ProductType | null
 }
 
-type ProductIDType = {
-    productID: string;
+type ProductIDParam = {
+    id: string;
 }
 
 const ProductDetailsPage: React.FC<Props> = ({ selectedProduct, products }) => {
 
-    const productID = useParams<ProductIDType>()
+    const { id: productID } = useParams<ProductIDParam>()
 
     console.log('PRODUCT ID ', productID)
 
-    const testProductDetails = products.find((pdtId) => (
-        pdtId.toString() === productID
-    ))
-    console.log('#####', testProductDetails)
+    const chosenProduct = useMemo(() => selectedProduct
+        ? selectedProduct
+        : products.find((product) => product.icon.id === productID),
+        [selectedProduct, products, productID]
+    )
 
-
-    const imageURL = `https://static.ui.com/fingerprint/ui/icons/${selectedProduct?.icon.id}_257x257.png`
+    const imageURL = `https://static.ui.com/fingerprint/ui/icons/${chosenProduct?.icon.id}_257x257.png`
 
     return (
         <>
@@ -39,33 +39,33 @@ const ProductDetailsPage: React.FC<Props> = ({ selectedProduct, products }) => {
                 <div className="product-article__info">
                     <div>
                         <p className="product-article__info-title">Product Line</p>
-                        <p>{selectedProduct?.line.name}</p>
+                        <p>{chosenProduct?.line.name}</p>
                     </div>
                     <div>
                         <p className="product-article__info-title">ID</p>
-                        <p>{selectedProduct?.line.id}</p>
+                        <p>{chosenProduct?.line.id}</p>
                     </div>
                     <div>
                         <p className="product-article__info-title">Name</p>
-                        <p>{selectedProduct?.product.name}</p>
+                        <p>{chosenProduct?.product.name}</p>
                     </div>
                     <div>
                         <p className="product-article__info-title">Short Name</p>
-                        <p>{selectedProduct?.product.abbrev}</p>
+                        <p>{chosenProduct?.product.abbrev}</p>
                     </div>
-                    {selectedProduct?.unifi ? (
+                    {chosenProduct?.unifi ? (
                         <>
                             <div>
                                 <p className="product-article__info-title">Max. Power</p>
-                                <p>{selectedProduct?.unifi.network.radios.na.maxPower} W</p>
+                                <p>{chosenProduct?.unifi.network.radios.na.maxPower} W</p>
                             </div>
                             <div>
                                 <p className="product-article__info-title">Speed</p>
-                                <p>{selectedProduct?.unifi.network.radios.na.maxSpeedMegabitsPerSecond} Mbps</p>
+                                <p>{chosenProduct?.unifi.network.radios.na.maxSpeedMegabitsPerSecond} Mbps</p>
                             </div>
                             <div>
                                 <p className="product-article__info-title">Number of ports</p>
-                                <p>{selectedProduct?.unifi.network.numberOfPorts}</p>
+                                <p>{chosenProduct?.unifi.network.numberOfPorts}</p>
                             </div>
                         </>
                     ) : null}
