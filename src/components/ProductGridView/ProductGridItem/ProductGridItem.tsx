@@ -27,8 +27,8 @@ const ProductGridItem: React.FC<ProductListProps> = ({product, setSelectedProduc
                     <img src={imageURL} />
                 </div>
                 <div>
-                    <div>{product.line.name}</div>
                     <div>{product.product.name}</div>
+                    <div>{product.line.name}</div>
                 </div>
             </article>
         </li>

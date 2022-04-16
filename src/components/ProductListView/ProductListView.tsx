@@ -8,13 +8,16 @@ type Props = {
     setSelectedProduct: (product: ProductType) => void;
     isFiltered: boolean;
     productLine: string;
+    searchResult: ProductType[];
 }
-const ProductListView: React.FC<Props> = ({ products, setSelectedProduct, isFiltered, productLine }) => {
+const ProductListView: React.FC<Props> = ({ products, setSelectedProduct, searchResult, isFiltered, productLine }) => {
 
     const productList = useMemo(() => isFiltered
         ? products.filter((product) => productLine === product.line.name)
+        : searchResult.length != 0
+        ? searchResult
         : products,
-        [isFiltered, products, productLine]
+        [isFiltered, products, productLine, searchResult]
     )
 
     return (

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { FormEvent, useRef, useState } from 'react'
 import './UtilityBar.css';
 import clear from '../../assets/close-icon.svg';
 import defaultGrid from '../../assets/default-grid.svg';
@@ -10,9 +10,10 @@ type SearchBarProps = {
   switchToGrid: () => void;
   switchToView: () => void;
   products: ProductType[];
-  setisFiltered: any;
-  setProductLine: any;
-  productLine: any;
+  setisFiltered: (bool: boolean) => void;
+  setProductLine: (categorie: string) => void;
+  productLine: string;
+  setSearchResult: (products: ProductType[]) => void;
 }
 
 
@@ -21,11 +22,12 @@ const SearchBar: React.FC<SearchBarProps> = ({
   switchToView,
   products,
   setProductLine,
+  setSearchResult,
   productLine,
   setisFiltered }) => {
   const [isShowingFilters, setIsShowingFilters] = useState(false)
 
-  let searchInputRef = useRef<HTMLInputElement>(null);
+  let searchInputRef = useRef<HTMLInputElement | null>(null);
 
   const clearSearchInput = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,21 +36,28 @@ const SearchBar: React.FC<SearchBarProps> = ({
       searchInputRef.current.value = '';
     }
   }
-  console.log('isShowingFilters: ', isShowingFilters)
 
   const getFilters = () => {
     setIsShowingFilters(true)
   }
 
+  const getSearchInput = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const SearchInput = searchInputRef?.current?.value;
+    const SearchResult = products.filter((product) => SearchInput?.toLocaleLowerCase() === product.product.name.toLocaleLowerCase())
+    setSearchResult(SearchResult);
+  }
+
   return (
     <>
       <nav className="nav-bar">
-        <form className="search-bar">
+        <form onSubmit={getSearchInput} className="search-bar">
           <input
             className="search-bar__input"
             type="search"
             placeholder="Search"
             ref={searchInputRef} />
+          <input className="submit-btn" type="submit" value="" />
           <button onClick={(e) => clearSearchInput(e)} className="search-bar__clear"><img src={clear} alt="clear search" /></button>
         </form>
         <div className="views-filters">

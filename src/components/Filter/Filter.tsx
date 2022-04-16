@@ -19,8 +19,6 @@ const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered,
   const categories = products.map(a => a.line.name)
   const uniqueCategories = Array.from(new Set(categories))
 
-  console.log('ON FILTER', uniqueCategories)
-
   return (
     <div className="filter-container">
       <div className="filter-container__header">
@@ -43,6 +41,7 @@ const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered,
             onClick={() => {
               setisFiltered(true);
               setProductLine(categorie)
+              setIsShowingFilters(false)
             }}
           >
             <input

@@ -28,7 +28,7 @@ const ProductDetailsPage: React.FC<Props> = ({ selectedProduct, products }) => {
     const navigate = useNavigate();
 
     const goBack = () => {
-        navigate(`/`);
+        navigate('/');
     }
 
 

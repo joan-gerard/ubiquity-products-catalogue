@@ -24,6 +24,10 @@
     color: #838691;
 }
 
+.submit-btn {
+    display: none;
+}
+
 .search-bar__clear {
     border: none;
     color: inherit;
