@@ -16,7 +16,7 @@ const App = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(null)
   const [isFiltered, setisFiltered] = useState(false)
   const [productLine, setProductLine] = useState('')
-  const [searchResult, setSearchResult] = useState<ProductType[]>([])
+  const [searchResult, setSearchResult] = useState<ProductType[] | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +54,7 @@ const App = () => {
             setSelectedProduct={setSelectedProduct}
             isFiltered={isFiltered}
             productLine={productLine}
+            searchResult={searchResult}
           />
           : <ProductListView
             products={products}

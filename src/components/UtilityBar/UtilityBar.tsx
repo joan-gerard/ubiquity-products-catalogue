@@ -13,7 +13,7 @@ type SearchBarProps = {
   setisFiltered: (bool: boolean) => void;
   setProductLine: (categorie: string) => void;
   productLine: string;
-  setSearchResult: (products: ProductType[]) => void;
+  setSearchResult: (products: ProductType[] | null) => void;
 }
 
 
@@ -32,9 +32,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const clearSearchInput = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchInputRef?.current?.value) {
-
       searchInputRef.current.value = '';
     }
+    setSearchResult(null)
   }
 
   const getFilters = () => {
@@ -45,7 +45,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
     event.preventDefault();
     const searchInput = searchInputRef?.current?.value;
     const regex = new RegExp(searchInput || '')
-    console.log(regex)
     const searchResult = products.filter((product) => product.product.name.toLowerCase().match(regex))
     setSearchResult(searchResult);
   }

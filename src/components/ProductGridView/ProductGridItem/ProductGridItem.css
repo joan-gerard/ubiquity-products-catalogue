@@ -10,6 +10,11 @@
     border: solid #DBDCE1 1px;
 }
 
+.product-grid-view:hover {
+    border: 0.8px solid #006FFF;
+    cursor: pointer;
+}
+
 article {
     width: 100%;
 }

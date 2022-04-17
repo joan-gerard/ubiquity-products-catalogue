@@ -8,15 +8,27 @@ type Props = {
     setSelectedProduct: (product: ProductType) => void
     isFiltered: boolean;
     productLine: string;
+    searchResult: ProductType[] | null;
 }
 
-const ProductGridView: React.FC<Props> = ({ products, setSelectedProduct, isFiltered, productLine }) => {
+const ProductGridView: React.FC<Props> = ({ products, setSelectedProduct, searchResult, isFiltered, productLine }) => {
 
     const productList = useMemo(() => isFiltered
-    ? products.filter((product) => productLine === product.line.name)
-    : products,
-    [isFiltered, products, productLine]
-)
+        ? products.filter((product) => productLine === product.line.name)
+        : Array.isArray(searchResult)
+        ? searchResult
+        : products,
+        [isFiltered, products, productLine, searchResult]
+    )
+
+    if (productList?.length === 0) {
+        return (
+            <main className="no-results-found">
+                <p>NO RESULTS FOUND!</p>
+            </main>
+        )
+    }
+
 
     return (
         <main className="products-grid-view">

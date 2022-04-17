@@ -8,27 +8,35 @@ type Props = {
     setSelectedProduct: (product: ProductType) => void;
     isFiltered: boolean;
     productLine: string;
-    searchResult: ProductType[];
+    searchResult: ProductType[] | null;
 }
 const ProductListView: React.FC<Props> = ({ products, setSelectedProduct, searchResult, isFiltered, productLine }) => {
 
     const productList = useMemo(() => isFiltered
         ? products.filter((product) => productLine === product.line.name)
-        : searchResult.length != 0
-        ? searchResult
-        : products,
+        : Array.isArray(searchResult)
+            ? searchResult
+            : products,
         [isFiltered, products, productLine, searchResult]
     )
 
+    if (productList?.length === 0) {
+        return (
+            <main className="no-results-found">
+                <p>NO RESULTS FOUND!</p>
+            </main>
+        )
+
+    }
+
+    console.log('productList ', { productList, searchResult, products })
     return (
         <main className="products-list-view">
-            {/* <div className="products-container__headers"> */}
-                <p className="products-list-number">{productList.length} devices</p>
-                <p className="products-list-line">PRODUCT LINE</p>
-                <p className="products-list-name">NAME</p>
-            {/* </div> */}
+            <p className="products-list-number">{productList?.length} devices</p>
+            <p className="products-list-line">PRODUCT LINE</p>
+            <p className="products-list-name">NAME</p>
             <ul className="products-list-container">
-                {productList.map((product, index) => (
+                {productList?.map((product, index) => (
                     <ProductListItem
                         key={index}
                         product={product}
