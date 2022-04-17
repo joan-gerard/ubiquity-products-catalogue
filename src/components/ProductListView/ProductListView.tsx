@@ -21,13 +21,13 @@ const ProductListView: React.FC<Props> = ({ products, setSelectedProduct, search
     )
 
     return (
-        <main className="products-container--list">
-            <div className="products-container__headers">
-                <p>{productList.length}</p>
-                <p>PRODUCT LINE</p>
-                <p>Name</p>
-            </div>
-            <ul>
+        <main className="products-list-view">
+            {/* <div className="products-container__headers"> */}
+                <p className="products-list-number">{productList.length} devices</p>
+                <p className="products-list-line">PRODUCT LINE</p>
+                <p className="products-list-name">NAME</p>
+            {/* </div> */}
+            <ul className="products-list-container">
                 {productList.map((product, index) => (
                     <ProductListItem
                         key={index}

@@ -19,9 +19,9 @@ const ProductGridView: React.FC<Props> = ({ products, setSelectedProduct, isFilt
 )
 
     return (
-        <main>
-            <p>{productList.length}</p>
-            <ul className="products-container--grid">
+        <main className="products-grid-view">
+            <p className="products-grid-number">{productList.length} devices</p>
+            <ul className="products-grid-container">
                 {productList.map((product, index) => (
                     <ProductGridItem
                         key={index}

@@ -1,16 +1,18 @@
-.nav-bar {
-    background-color: bisque;
+.utility-bar {
     display: flex;
     justify-content: space-between;
     height: 48px;
     align-items: center;
+    border-bottom: 1.5px solid #EDEDF0;
 }
 
 .search-bar {
     margin: 0 0 0 1em;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #F6F6F8;
+    width: 200px;
 }
 
 .search-bar__input {

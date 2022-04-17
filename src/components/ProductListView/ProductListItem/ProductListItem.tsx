@@ -23,9 +23,9 @@ const ProductListItem: React.FC<ProductListProps> = ({product, setSelectedProduc
 
   return (
     <li onClick={getProductDetails} className="product-list-view">
-      <img src={imageURL} />
-      <div>{product.line.name}</div>
-      <div>{product.product.name}</div>
+      <img className="product-img" src={imageURL} />
+      <div className="product-line">{product.line.name}</div>
+      <div className="product-name">{product.product.name}</div>
     </li>
   )
 }

@@ -52,7 +52,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   return (
     <>
-      <nav className="nav-bar">
+      <nav className="utility-bar">
         <form onSubmit={getSearchInput} className="search-bar">
           <input
             className="search-bar__input"
