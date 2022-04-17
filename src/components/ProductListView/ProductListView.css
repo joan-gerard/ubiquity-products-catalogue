@@ -40,4 +40,5 @@
 .no-results-found>p {
     margin: auto;
     margin-top: 2em;
+    font-weight: 300;
 }

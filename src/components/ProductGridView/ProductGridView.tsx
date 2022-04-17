@@ -29,7 +29,6 @@ const ProductGridView: React.FC<Props> = ({ products, setSelectedProduct, search
         )
     }
 
-
     return (
         <main className="products-grid-view">
             <p className="products-grid-number">{productList.length} devices</p>

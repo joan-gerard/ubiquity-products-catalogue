@@ -25,8 +25,6 @@ const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered,
   const categories = products.map(a => a.line.name)
   const uniqueCategories = Array.from(new Set(categories))
 
-  console.log('productLine: ', productLine)
-
   return (
     <div className="filter-container">
       <div className="filter-container__header">
@@ -48,7 +46,7 @@ const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered,
             }}
           >
             <input
-              type="radio"
+              type="checkbox"
               id={categorie}
               className="filter-categorie__input"
               defaultChecked={productLine === categorie}

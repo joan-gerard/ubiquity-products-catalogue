@@ -14,7 +14,7 @@
     width: 300px;
 }
 
-.product-article__info > div {
+.product-article__info>div {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em;

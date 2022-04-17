@@ -2,16 +2,23 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+Clone this repositery and install the dependencies:
+
+### `npm install`
+
+Once the dependencies are installed, run the server:
 
 ### `npm start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm test`
+## Left to complete
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
+- Filter popup window should close when clicking outside of it.
+- Utility Bar component to disappear when in Product Page Detail
+- Auto complete search
+- Default/active effect on List and Grid icons
+- Ideally the position of the filter popup would match the Figma design (as of now, the popup is not aligned with the utility bar)
+- Write unit tests

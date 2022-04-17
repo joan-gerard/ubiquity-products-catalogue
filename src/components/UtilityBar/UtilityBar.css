@@ -45,8 +45,10 @@
 .views-and-filters>* {
     margin-left: 0.5em;
 }
+
 .views-and-filters>*:hover {
     border-bottom: 0.8px solid #006FFF;
+    cursor: pointer;
 }
 
 *:focus {

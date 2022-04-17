@@ -8,23 +8,22 @@ type ProductListProps = {
     setSelectedProduct: (product: ProductType) => void
 }
 
-const ProductGridItem: React.FC<ProductListProps> = ({product, setSelectedProduct}) => {
+const ProductGridItem: React.FC<ProductListProps> = ({ product, setSelectedProduct }) => {
     const imageURL = `https://static.ui.com/fingerprint/ui/icons/${product.icon.id}_101x101.png`
 
     const navigate = useNavigate();
 
 
     const getProductDetails = () => {
-      setSelectedProduct(product)
-      navigate(`/devices/${product.icon.id}`);
+        setSelectedProduct(product)
+        navigate(`/devices/${product.icon.id}`);
     }
-  
-  
+
     return (
         <li onClick={getProductDetails} className="product--grid-view">
             <article>
                 <div className="product-img-container">
-                    <img src={imageURL} />
+                    <img src={imageURL} alt="Product Image" />
                 </div>
                 <div className="product-info-container">
                     <p>{product.product.name}</p>

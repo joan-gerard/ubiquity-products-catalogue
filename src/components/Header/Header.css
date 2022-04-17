@@ -13,6 +13,10 @@
     align-items: center;
 }
 
+.app-header__info>img:hover {
+    cursor: pointer;
+}
+
 .app-header__info>h4 {
     font-weight: 300;
     margin: 0 0 0 0.5em;
