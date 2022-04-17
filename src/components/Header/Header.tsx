@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import './Header.css';
 import logo from '../../assets/logo.svg';
-import { ProductType } from '../../interface/interface';
 
 const Header = () => {
   const navigate = useNavigate();

@@ -20,7 +20,7 @@ const ProductListItem: React.FC<ProductListProps> = ({ product, setSelectedProdu
 
   return (
     <li onClick={getProductDetails} className="product--list-view">
-      <img className="product-img" src={imageURL} alt="Product Image" />
+      <img className="product-img" src={imageURL} alt="Product" />
       <div className="product-line">{product.line.name}</div>
       <div className="product-name">{product.product.name}</div>
     </li>

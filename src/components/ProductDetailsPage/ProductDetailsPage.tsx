@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import { ProductType } from '../../interface/interface'
 import { useParams, useNavigate } from 'react-router-dom'
 import './ProductDetailsPage.css'
@@ -43,7 +43,7 @@ const ProductDetailsPage: React.FC<Props> = ({ selectedProduct, products }) => {
             </div>
             <article className="product-article">
                 <div className="product-article__image">
-                    <img src={imageURL} />
+                    <img src={imageURL} alt="Product" />
                 </div>
                 <div className="product-article__info">
                     <div>
