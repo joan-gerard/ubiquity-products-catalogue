@@ -1,13 +1,12 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom'
-
 import './Header.css';
 import logo from '../../assets/logo.svg';
+import { ProductType } from '../../interface/interface';
 
 const Header = () => {
   const navigate = useNavigate();
 
-  const goToMainPage = () => {
+  const goToMainPage = async () => {
     navigate('/');
   }
 
@@ -15,10 +14,10 @@ const Header = () => {
     <header className="app-header">
       <div className="app-header__info">
         <img onClick={goToMainPage} src={logo} alt="Ubiquity Logo" />
-        <h2>Devices</h2>
+        <h4>Devices</h4>
       </div>
       <div className="app-header__author">
-        <h3>Joan Gerard</h3>
+        <h4>Joan Gerard</h4>
       </div>
     </header>
   )

@@ -1,4 +1,4 @@
-.product-grid-view {
+.product--grid-view {
     display: flex;
     flex-flow: wrap;
     background-color: white;
@@ -19,11 +19,24 @@ article {
     width: 100%;
 }
 
-.icon-container {
+.product-img-container {
     display: flex;
     background-color: #F6F6F8;
     justify-content: space-around;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     height: 124px;
+}
+
+.product-info-container {
+    padding: 0.5em;
+}
+
+.product-info-container > p {
+    margin: 0.2em;
+}
+
+.product-info-container > p:first-child {
+    font-size:large;
+    font-weight: 300;
 }

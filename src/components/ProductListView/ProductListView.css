@@ -1,31 +1,18 @@
-/* .products-container--list {
-    background-color: antiquewhite;
-    margin: 1em auto;
-    width: 1262px;
-}
-
-.products-container__headers {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1em;
-} */
-
 .products-list-number {
     grid-area: products-list-number;
     justify-self: end;
     margin-right: 2em;
-
 }
 
 .products-list-line {
     grid-area: products-list-line;
-    font-weight: 900;
+    font-weight: 400;
     color: black;
 }
 
 .products-list-name {
     grid-area: products-list-name;
-    font-weight: 900;
+    font-weight: 400;
     color: black;
 }
 
@@ -50,7 +37,7 @@
     display: flex;
 }
 
-.no-results-found > p {
+.no-results-found>p {
     margin: auto;
     margin-top: 2em;
 }

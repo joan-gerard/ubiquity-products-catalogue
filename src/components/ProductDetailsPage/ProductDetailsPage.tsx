@@ -17,8 +17,6 @@ const ProductDetailsPage: React.FC<Props> = ({ selectedProduct, products }) => {
 
     const { id: productID } = useParams<ProductIDParam>()
 
-    console.log('PRODUCT ID ', productID)
-
     const chosenProduct = useMemo(() => selectedProduct
         ? selectedProduct
         : products.find((product) => product.icon.id === productID),
@@ -30,7 +28,6 @@ const ProductDetailsPage: React.FC<Props> = ({ selectedProduct, products }) => {
     const goBack = () => {
         navigate('/');
     }
-
 
     const imageURL = `https://static.ui.com/fingerprint/ui/icons/${chosenProduct?.icon.id}_257x257.png`
 

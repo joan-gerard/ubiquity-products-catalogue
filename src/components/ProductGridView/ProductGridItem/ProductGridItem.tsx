@@ -21,14 +21,14 @@ const ProductGridItem: React.FC<ProductListProps> = ({product, setSelectedProduc
   
   
     return (
-        <li onClick={getProductDetails} className="product-grid-view">
+        <li onClick={getProductDetails} className="product--grid-view">
             <article>
-                <div className="icon-container">
+                <div className="product-img-container">
                     <img src={imageURL} />
                 </div>
-                <div>
-                    <div>{product.product.name}</div>
-                    <div>{product.line.name}</div>
+                <div className="product-info-container">
+                    <p>{product.product.name}</p>
+                    <p>{product.line.name}</p>
                 </div>
             </article>
         </li>

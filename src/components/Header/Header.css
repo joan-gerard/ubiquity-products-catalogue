@@ -6,7 +6,6 @@
     align-items: center;
     height: 56px;
     border-bottom: 1.5px solid #EDEDF0;
-
 }
 
 .app-header__info {
@@ -14,10 +13,15 @@
     align-items: center;
 }
 
-h2 {
+.app-header__info>h4 {
+    font-weight: 300;
     margin: 0 0 0 0.5em;
 }
 
 .app-header__author {
     margin: 0 1.5em 0 0;
+}
+
+.app-header__author>h4 {
+    font-weight: 300;
 }

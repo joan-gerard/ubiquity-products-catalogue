@@ -16,28 +16,30 @@ const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered,
     setIsShowingFilters(false)
   }
 
+  const clearFilters = () => {
+    setisFiltered(false)
+    setProductLine('')
+    setIsShowingFilters(false)
+  }
+
   const categories = products.map(a => a.line.name)
   const uniqueCategories = Array.from(new Set(categories))
+
+  console.log('productLine: ', productLine)
 
   return (
     <div className="filter-container">
       <div className="filter-container__header">
         <p>Filter</p>
-        <p className="close-filter-button" onClick={closeFilter}>X</p>
+        <p className="filter-container__close-btn" onClick={closeFilter}>X</p>
       </div>
-      <div>
+      <h3>
         Product Line
-      </div>
-      <form className="filter-container__categories">
+      </h3>
+      <form className="filter-container__categorie-list">
         {uniqueCategories.map((categorie, index) => (
-          // <p
-          //   onClick={() => {
-          //     setisFiltered(true);
-          //     setProductLine(categorie)
-          //   }}
-          //   key={index}
-          //   className="categorie">{categorie}</p>
           <div
+            className="filter-categorie"
             key={index}
             onClick={() => {
               setisFiltered(true);
@@ -48,15 +50,16 @@ const Filter: React.FC<Props> = ({ setIsShowingFilters, products, setisFiltered,
             <input
               type="radio"
               id={categorie}
+              className="filter-categorie__input"
               defaultChecked={productLine === categorie}
             />
             <label
               htmlFor={categorie}
-              className="categorie"
             >{categorie}</label>
           </div>
         ))}
       </form>
+      <button className="clear-filter-btn" onClick={clearFilters}>Clear Filters</button>
     </div>
   )
 }

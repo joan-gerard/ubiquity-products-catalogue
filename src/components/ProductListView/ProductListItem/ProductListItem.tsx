@@ -15,14 +15,13 @@ const ProductListItem: React.FC<ProductListProps> = ({product, setSelectedProduc
 
   const navigate = useNavigate();
 
-
   const getProductDetails = () => {
     setSelectedProduct(product)
     navigate(`/devices/${product.icon.id}`);
   }
 
   return (
-    <li onClick={getProductDetails} className="product-list-view">
+    <li onClick={getProductDetails} className="product--list-view">
       <img className="product-img" src={imageURL} />
       <div className="product-line">{product.line.name}</div>
       <div className="product-name">{product.product.name}</div>

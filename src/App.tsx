@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react'
-import './App.css';
 import Header from './components/Header/Header';
 import UtilityBar from './components/UtilityBar/UtilityBar';
 import ProductDetailsPage from './components/ProductDetailsPage/ProductDetailsPage';

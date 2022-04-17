@@ -29,7 +29,6 @@ const ProductListView: React.FC<Props> = ({ products, setSelectedProduct, search
 
     }
 
-    console.log('productList ', { productList, searchResult, products })
     return (
         <main className="products-list-view">
             <p className="products-list-number">{productList?.length} devices</p>

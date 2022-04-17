@@ -6,12 +6,12 @@
     width: 600px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 300;
 }
 
 .product-article__info {
     margin-left: 2em;
     width: 300px;
-    font-weight: bold;
 }
 
 .product-article__info > div {

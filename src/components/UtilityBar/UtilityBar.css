@@ -26,24 +26,27 @@
     color: #838691;
 }
 
-.submit-btn {
+.search-bar__submit-btn {
     display: none;
 }
 
-.search-bar__clear {
+.search-bar__clear-btn {
     border: none;
     color: inherit;
     background: none;
 }
 
-.views-filters {
+.views-and-filters {
     margin: 0 1.5em 0 0;
     display: flex;
     justify-content: space-evenly;
 }
 
-.views-filters > * {
+.views-and-filters>* {
     margin-left: 0.5em;
+}
+.views-and-filters>*:hover {
+    border-bottom: 0.8px solid #006FFF;
 }
 
 *:focus {

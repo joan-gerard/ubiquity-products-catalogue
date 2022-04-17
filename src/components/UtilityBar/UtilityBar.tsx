@@ -17,7 +17,7 @@ type SearchBarProps = {
 }
 
 
-const SearchBar: React.FC<SearchBarProps> = ({
+const UtilityBar: React.FC<SearchBarProps> = ({
   switchToGrid,
   switchToView,
   products,
@@ -58,10 +58,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
             type="search"
             placeholder="Search"
             ref={searchInputRef} />
-          <input className="submit-btn" type="submit" value="" />
-          <button onClick={(e) => clearSearchInput(e)} className="search-bar__clear"><img src={clear} alt="clear search" /></button>
+          <input className="search-bar__submit-btn" type="submit" value="" />
+          <button onClick={(e) => clearSearchInput(e)} className="search-bar__clear-btn"><img src={clear} alt="clear search" /></button>
         </form>
-        <div className="views-filters">
+        <div className="views-and-filters">
           <img onClick={switchToView} src={defaultList} alt="List View Icon" />
           <img onClick={switchToGrid} src={defaultGrid} alt="Grid View Icon" />
           <p onClick={getFilters}>Filter</p>
@@ -80,4 +80,4 @@ const SearchBar: React.FC<SearchBarProps> = ({
   )
 }
 
-export default SearchBar
+export default UtilityBar

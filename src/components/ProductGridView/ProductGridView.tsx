@@ -16,8 +16,8 @@ const ProductGridView: React.FC<Props> = ({ products, setSelectedProduct, search
     const productList = useMemo(() => isFiltered
         ? products.filter((product) => productLine === product.line.name)
         : Array.isArray(searchResult)
-        ? searchResult
-        : products,
+            ? searchResult
+            : products,
         [isFiltered, products, productLine, searchResult]
     )
 
