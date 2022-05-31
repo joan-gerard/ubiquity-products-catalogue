@@ -1,4 +1,4 @@
-# Ubiquity Front-End Test Assignment
+# Ubiquity Products Catalogue
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
