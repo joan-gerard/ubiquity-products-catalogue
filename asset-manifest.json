@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ubiquity-products-catalogue/static/css/main.dbb65926.css",
-    "main.js": "/ubiquity-products-catalogue/static/js/main.6c16637e.js",
+    "main.js": "/ubiquity-products-catalogue/static/js/main.25007299.js",
     "static/media/logo.svg": "/ubiquity-products-catalogue/static/media/logo.3761cab1be020d97e48ed45b270ee812.svg",
     "static/media/default-list.svg": "/ubiquity-products-catalogue/static/media/default-list.8e0207a7b6648dcd3b399d3d0106b1c4.svg",
     "index.html": "/ubiquity-products-catalogue/index.html",
@@ -10,10 +10,10 @@
     "static/media/close-icon.svg": "/ubiquity-products-catalogue/static/media/close-icon.c050de61b7b9aeb4fd0ff4512aaa14ea.svg",
     "static/media/back-icon.svg": "/ubiquity-products-catalogue/static/media/back-icon.cff8098b6bb8f6eaee8fd3be6dddb795.svg",
     "main.dbb65926.css.map": "/ubiquity-products-catalogue/static/css/main.dbb65926.css.map",
-    "main.6c16637e.js.map": "/ubiquity-products-catalogue/static/js/main.6c16637e.js.map"
+    "main.25007299.js.map": "/ubiquity-products-catalogue/static/js/main.25007299.js.map"
   },
   "entrypoints": [
     "static/css/main.dbb65926.css",
-    "static/js/main.6c16637e.js"
+    "static/js/main.25007299.js"
   ]
 }
