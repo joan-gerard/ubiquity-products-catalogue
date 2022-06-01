@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/ubiquity-products-catalogue'>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
