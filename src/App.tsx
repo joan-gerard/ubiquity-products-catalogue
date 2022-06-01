@@ -1,38 +1,39 @@
-import { useState, useEffect, useCallback } from 'react'
-import Header from './components/Header/Header';
-import UtilityBar from './components/UtilityBar/UtilityBar';
-import ProductDetailsPage from './components/ProductDetailsPage/ProductDetailsPage';
-import { Routes, Route } from 'react-router-dom';
-import { ProductType } from './interface/interface';
-import ProductListView from './components/ProductListView/ProductListView';
-import ProductGridView from './components/ProductGridView/ProductGridView';
-
+import { useState, useEffect, useCallback } from "react";
+import Header from "./components/Header/Header";
+import UtilityBar from "./components/UtilityBar/UtilityBar";
+import ProductDetailsPage from "./components/ProductDetailsPage/ProductDetailsPage";
+import { Routes, Route } from "react-router-dom";
+import { ProductType } from "./interface/interface";
+import ProductListView from "./components/ProductListView/ProductListView";
+import ProductGridView from "./components/ProductGridView/ProductGridView";
 
 const App = () => {
-
-  const [isGrid, setIsGrid] = useState(false)
-  const [products, setProducts] = useState<ProductType[]>([])
-  const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(null)
-  const [isFiltered, setisFiltered] = useState(false)
-  const [productLine, setProductLine] = useState('')
-  const [searchResult, setSearchResult] = useState<ProductType[] | null>(null)
+  const [isGrid, setIsGrid] = useState(false);
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(
+    null
+  );
+  const [isFiltered, setisFiltered] = useState(false);
+  const [productLine, setProductLine] = useState("");
+  const [searchResult, setSearchResult] = useState<ProductType[] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch('https://static.ui.com/fingerprint/ui/public.json')
+      const data = await fetch(
+        "https://static.ui.com/fingerprint/ui/public.json"
+      );
       const json = await data.json();
-      setProducts(json.devices)
-    }
+      setProducts(json.devices);
+    };
     fetchData();
-  }, [])
+  }, []);
 
   const switchToGrid = useCallback(() => {
-    setIsGrid(true)
-  }, [])
+    setIsGrid(true);
+  }, []);
   const switchToView = useCallback(() => {
-    setIsGrid(false)
-  }, [])
-
+    setIsGrid(false);
+  }, []);
 
   return (
     <div className="app">
@@ -47,26 +48,40 @@ const App = () => {
         setSearchResult={setSearchResult}
       />
       <Routes>
-        <Route path="/" element={isGrid
-          ? <ProductGridView
-            products={products}
-            setSelectedProduct={setSelectedProduct}
-            isFiltered={isFiltered}
-            productLine={productLine}
-            searchResult={searchResult}
-          />
-          : <ProductListView
-            products={products}
-            setSelectedProduct={setSelectedProduct}
-            isFiltered={isFiltered}
-            productLine={productLine}
-            searchResult={searchResult}
-          />
-        } />
-        <Route path="/devices/:id" element={<ProductDetailsPage products={products} selectedProduct={selectedProduct} />} />
+        <Route
+          path="/"
+          element={
+            isGrid ? (
+              <ProductGridView
+                products={products}
+                setSelectedProduct={setSelectedProduct}
+                isFiltered={isFiltered}
+                productLine={productLine}
+                searchResult={searchResult}
+              />
+            ) : (
+              <ProductListView
+                products={products}
+                setSelectedProduct={setSelectedProduct}
+                isFiltered={isFiltered}
+                productLine={productLine}
+                searchResult={searchResult}
+              />
+            )
+          }
+        />
+        <Route
+          path="/devices/:id"
+          element={
+            <ProductDetailsPage
+              products={products}
+              selectedProduct={selectedProduct}
+            />
+          }
+        />
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
