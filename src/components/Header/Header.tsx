@@ -13,7 +13,7 @@ const Header = () => {
     <header className="app-header">
       <div className="app-header__info">
         <img onClick={goToMainPage} src={logo} alt="Ubiquity Logo" />
-        <h4>Devices</h4>
+        <h4>New Devices</h4>
       </div>
       <div className="app-header__author">
         <h4>Joan Gerard</h4>
